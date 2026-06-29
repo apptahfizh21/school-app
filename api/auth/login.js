@@ -21,12 +21,13 @@ export default async function handler(req, res) {
     }
 
     // Proses login
+    // Proses login
     const result = await login(username, password);
 
     return res.status(200).json({
       success: true,
       message: "Login berhasil.",
-      ...result,
+      data: result,
     });
   } catch (error) {
     return res.status(401).json({
